@@ -15,15 +15,15 @@ you can call this func to make your Method Swizzling
     
     dynamic func test2() { 
         print("u print test2 sure")
-    }
-
-
+    }
 
 
 
 /// MethodSwizzling , when the swizzled function belong subClass , call this Function .and The cls = superClass   
 
 /// warning : you must to add 'dynamic' before 'func' ; like this : < dynamic func test() { <#your code#>}>
+
+
 `
 public func ZeroSwap(cls : AnyClass,originalSelector : Selector, swizzledSelector : Selector ) {
     
@@ -37,22 +37,27 @@ public func ZeroSwap(cls : AnyClass,originalSelector : Selector, swizzledSelecto
     }else {
         method_exchangeImplementations(originalMethod, swizzledMethod)
     }
-    
-}`
+}
 
+`
 
 ///MethodSwizzling , when the swizzled function belong different class and not subClass , call this Function . You should input different class
 
 /// warning : you must to add 'dynamic' before 'func' ; like this : < dynamic func test() { <#your code#>}>
+
+
 `
 public func ZeroSwap(originalCls : AnyClass,originalSelector : Selector,swizzledCls : AnyClass, swizzledSelector : Selector ) {
 
     method_exchangeImplementations(class_getInstanceMethod(originalCls, originalSelector), class_getInstanceMethod(swizzledCls, swizzledSelector))
     
 }
+
 `
 
+
 // swift 3.0 dispath_once  maybe you need this func to Swizzling method , it can make your code excute once
+
 `
 public extension DispatchQueue {
     
