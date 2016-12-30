@@ -1,7 +1,7 @@
 # ZeroMethodSwizzling
 you can call this func to make your Method Swizzling
 
-
+```
     override func viewDidLoad() {
         super.viewDidLoad()
         self.test1()
@@ -16,7 +16,7 @@ you can call this func to make your Method Swizzling
     dynamic func test2() { 
         print("u print test2 sure")
     }
-
+```
 
 
 /// MethodSwizzling , when the swizzled function belong subClass , call this Function .and The cls = superClass   
