@@ -49,8 +49,8 @@ public func ZeroSwap(originalCls : AnyClass,originalSelector : Selector,swizzled
 
     method_exchangeImplementations(class_getInstanceMethod(originalCls, originalSelector), class_getInstanceMethod(swizzledCls, swizzledSelector))
     
-}`
-
+}
+`
 
 // swift 3.0 dispath_once  maybe you need this func to Swizzling method , it can make your code excute once
 `
