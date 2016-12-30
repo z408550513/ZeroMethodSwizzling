@@ -24,7 +24,7 @@ you can call this func to make your Method Swizzling
 /// warning : you must to add 'dynamic' before 'func' ; like this : < dynamic func test() { <#your code#>}>
 
 
-`
+```
 public func ZeroSwap(cls : AnyClass,originalSelector : Selector, swizzledSelector : Selector ) {
     
     
@@ -39,26 +39,23 @@ public func ZeroSwap(cls : AnyClass,originalSelector : Selector, swizzledSelecto
     }
 }
 
-`
-
+```
 ///MethodSwizzling , when the swizzled function belong different class and not subClass , call this Function . You should input different class
 
 /// warning : you must to add 'dynamic' before 'func' ; like this : < dynamic func test() { <#your code#>}>
 
 
-`
+```
 public func ZeroSwap(originalCls : AnyClass,originalSelector : Selector,swizzledCls : AnyClass, swizzledSelector : Selector ) {
 
     method_exchangeImplementations(class_getInstanceMethod(originalCls, originalSelector), class_getInstanceMethod(swizzledCls, swizzledSelector))
     
 }
 
-`
-
-
+```
 // swift 3.0 dispath_once  maybe you need this func to Swizzling method , it can make your code excute once
 
-`
+```
 public extension DispatchQueue {
     
     private static var _onceTracker = [String]()
@@ -81,7 +78,6 @@ public extension DispatchQueue {
         _onceTracker.append(token)
         block()
     }
-}`
-
-
+}
+```
 参考:http://www.jianshu.com/p/a6b675f4d073
